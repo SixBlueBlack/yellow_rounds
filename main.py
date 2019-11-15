@@ -26,11 +26,11 @@ class CalendarView(QMainWindow):
         qp.end()
 
     def drawFlag(self, qp):
-        qp.setBrush(QColor("yellow"))
         n = randint(1, 50)
         for _ in range(n):
-            a = randint(1, 400)
-            b = randint(1, 300)
+            qp.setBrush(QColor(randint(0, 255), randint(0, 255), randint(0, 255)))
+            a = randint(-10, 430)
+            b = randint(-10, 430)
             qp.drawEllipse(a, b, a, a)
 
 
