@@ -9,7 +9,7 @@ from random import randint
 class CalendarView(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('rounds.ui', self)
+        uic.loadUi('UI.ui', self)
         self.point = False
         self.pushButton.clicked.connect(self.click)
 
