@@ -1,15 +1,15 @@
 import sys
 
-from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QPainter, QColor
 from random import randint
+from UI import Ui_MainWindow
 
 
-class CalendarView(QMainWindow):
+class MyWidget(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.point = False
         self.pushButton.clicked.connect(self.click)
 
@@ -36,6 +36,6 @@ class CalendarView(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    calendar = CalendarView()
+    calendar = MyWidget()
     calendar.show()
     sys.exit(app.exec_())
